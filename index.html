@@ -33,6 +33,7 @@
         @media (min-width: 641px) and (max-width: 768px) {
             .nav-button { font-size: 0.95rem; padding: 0.5rem 1.25rem; }
         }
+        .error-message { display: none; color: #dc2626; text-align: center; padding: 1rem; }
     </style>
 </head>
 <body class="bg-gray-100 min-h-screen">
@@ -54,7 +55,7 @@
         <div class="container mx-auto px-4 sm:px-6">
             <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/d52b367e-5068-4d98-a7b3-5b03a1c530c9.png" alt="BPSC logo with Bihar state emblem" class="mx-auto mb-6 w-24 sm:w-32 rounded-lg shadow-lg" srcset="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/d52b367e-5068-4d98-a7b3-5b03a1c530c9.png 1x, https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/d52b367e-5068-4d98-a7b3-5b03a1c530c9.png 2x" sizes="(max-width: 640px) 100px, 150px">
             <h1 class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-center mb-3">BPSC Syllabus Analysis & Predictions</h1>
-            <p class="text-lg sm:text-xl text-center opacity-90">Comprehensive Mapping of PYQs with High-Potential Topics</p>
+            <p class="text-lg sm:text-xl text-center opacity-90">Comprehensive Mapping of 145 PYQs with High-Potential Topics</p>
             <div class="flex flex-wrap justify-center mt-6 gap-4 sm:gap-6">
                 <div class="bg-white bg-opacity-20 px-4 py-2 rounded-full text-sm sm:text-base"><span class="font-semibold">Questions Analyzed:</span> <span id="total-questions">145</span></div>
                 <div class="bg-white bg-opacity-20 px-4 py-2 rounded-full text-sm sm:text-base"><span class="font-semibold">Syllabus Areas:</span> <span id="total-areas">7</span></div>
@@ -65,25 +66,8 @@
 
     <!-- Main Content -->
     <div class="container mx-auto px-4 sm:px-6 py-8 sm:py-12">
-        <!-- Summary Statistics -->
-        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 mb-8 sm:mb-12">
-            <div class="bg-white p-4 sm:p-6 rounded-lg card-shadow text-center">
-                <div class="text-3xl sm:text-4xl font-bold text-blue-600 mb-2">35</div>
-                <div class="text-base sm:text-lg text-gray-600">Science & Technology</div>
-            </div>
-            <div class="bg-white p-4 sm:p-6 rounded-lg card-shadow text-center">
-                <div class="text-3xl sm:text-4xl font-bold text-purple-600 mb-2">40</div>
-                <div class="text-base sm:text-lg text-gray-600">Current Affairs</div>
-            </div>
-            <div class="bg-white p-4 sm:p-6 rounded-lg card-shadow text-center">
-                <div class="text-3xl sm:text-4xl font-bold text-green-600 mb-2">25</div>
-                <div class="text-base sm:text-lg text-gray-600">History Questions</div>
-            </div>
-            <div class="bg-white p-4 sm:p-6 rounded-lg card-shadow text-center">
-                <div class="text-3xl sm:text-4xl font-bold text-orange-600 mb-2">45</div>
-                <div class="text-base sm:text-lg text-gray-600">Other Subjects</div>
-            </div>
-        </div>
+        <!-- Error Message (if table fails to load) -->
+        <div id="error-message" class="error-message">Unable to load syllabus data. Please check the console for errors.</div>
 
         <!-- Analysis Table -->
         <div class="bg-white rounded-lg card-shadow">
@@ -92,77 +76,6 @@
             </div>
             <div class="table-container" id="syllabus-table">
                 <!-- Table content will be dynamically populated -->
-            </div>
-        </div>
-
-        <!-- Future Trends -->
-        <div class="mt-8 sm:mt-12 bg-white rounded-lg card-shadow p-4 sm:p-6">
-            <h3 class="text-xl sm:text-2xl font-bold text-gray-800 mb-4 sm:mb-6 text-center">🔮 Future Question Trends</h3>
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
-                <div class="bg-gradient-to-br from-blue-50 to-blue-100 p-4 rounded-lg card-shadow">
-                    <h4 class="font-bold text-blue-800 mb-2">Technology Focus</h4>
-                    <ul class="text-sm text-blue-700 space-y-1">
-                        <li>• AI/ML in Governance</li><li>• Quantum Technology</li><li>• Space Tech</li><li>• Biotech Innovations</li><li>• Green Energy</li>
-                    </ul>
-                </div>
-                <div class="bg-gradient-to-br from-green-50 to-green-100 p-4 rounded-lg card-shadow">
-                    <h4 class="font-bold text-green-800 mb-2">Contemporary Issues</h4>
-                    <ul class="text-sm text-green-700 space-y-1">
-                        <li>• Climate Change</li><li>• Sustainable Development</li><li>• Digital Governance</li><li>• Social Justice</li><li>• Economic Recovery</li>
-                    </ul>
-                </div>
-                <div class="bg-gradient-to-br from-purple-50 to-purple-100 p-4 rounded-lg card-shadow">
-                    <h4 class="font-bold text-purple-800 mb-2">Governance & Policy</h4>
-                    <ul class="text-sm text-purple-700 space-y-1">
-                        <li>• Constitutional Reforms</li><li>• Federal Relations</li><li>• Electoral Innovations</li><li>• Public Policy</li><li>• Administrative Efficiency</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-
-        <!-- Preparation Strategy -->
-        <div class="mt-8 sm:mt-12 bg-gradient-to-r from-indigo-600 to-purple-700 text-white rounded-lg p-4 sm:p-6">
-            <h3 class="text-xl sm:text-2xl font-bold mb-4 sm:mb-6 text-center">📋 Strategic Preparation Recommendations</h3>
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
-                <div>
-                    <h4 class="font-bold mb-2">High Priority Areas:</h4>
-                    <div class="bg-white bg-opacity-20 p-4 rounded-lg">
-                        <ul class="space-y-2 text-sm">
-                            <li>✅ Current Affairs: Last 18 months</li><li>✅ Science & Tech: Innovations</li><li>✅ Bihar: Governance & development</li><li>✅ Constitution: Amendments</li><li>✅ Environment: Climate policies</li>
-                        </ul>
-                    </div>
-                </div>
-                <div>
-                    <h4 class="font-bold mb-2">Question Pattern Insights:</h4>
-                    <div class="bg-white bg-opacity-20 p-4 rounded-lg">
-                        <ul class="space-y-2 text-sm">
-                            <li>📈 Application-based (35%)</li><li>📈 Multi-disciplinary</li><li>📈 Contemporary relevance (40%)</li><li>📈 Bihar-centric (15-20%)</li><li>📈 Current affairs integration</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Success Statistics -->
-        <div class="mt-8 sm:mt-12 text-center bg-gray-50 rounded-lg p-4 sm:p-6 card-shadow">
-            <h3 class="text-xl sm:text-2xl font-bold text-gray-800 mb-4">📊 Analysis Statistics</h3>
-            <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-6">
-                <div class="bg-white p-4 rounded-lg card-shadow">
-                    <div class="text-2xl sm:text-3xl font-bold text-blue-600" id="stats-questions">145</div>
-                    <div class="text-sm sm:text-base text-gray-600">Questions Analyzed</div>
-                </div>
-                <div class="bg-white p-4 rounded-lg card-shadow">
-                    <div class="text-2xl sm:text-3xl font-bold text-green-600" id="stats-areas">7</div>
-                    <div class="text-sm sm:text-base text-gray-600">Syllabus Areas</div>
-                </div>
-                <div class="bg-white p-4 rounded-lg card-shadow">
-                    <div class="text-2xl sm:text-3xl font-bold text-purple-600">150+</div>
-                    <div class="text-sm sm:text-base text-gray-600">Future Topics</div>
-                </div>
-                <div class="bg-white p-4 rounded-lg card-shadow">
-                    <div class="text-2xl sm:text-3xl font-bold text-orange-600">85%</div>
-                    <div class="text-sm sm:text-base text-gray-600">Prediction Accuracy</div>
-                </div>
             </div>
         </div>
     </div>
@@ -177,13 +90,13 @@
         <div class="container mx-auto px-4 sm:px-6 text-center">
             <p class="text-lg sm:text-xl font-semibold mb-2">📚 BPSC Success Strategy</p>
             <p class="text-sm sm:text-base opacity-90">Comprehensive Analysis • Strategic Preparation • Success Guaranteed</p>
-            <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/e9d259f7-796c-4cd6-a951-72d9b3be328f.png" alt="Educational success symbols" class="mx-auto mt-4 w-20 sm:w-24 rounded-lg opacity-80" srcset="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/e9d259f7-796c-4cd6-a951-72d9b3be328f.png 1x, https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/e9d259f7-796c-4cd6-a951-72d9b3be328f.png 2x" sizes="(max-width: 640px) 80px, 120px">
+            <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/e9d259f7-796c-4cd6-a951-72d9b3be328f.png" alt="Educational success symbols" class="mx-auto mt-4 w-20 sm:w-24 rounded-lg opacity-80" srcset="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/e9d259f7-796c-4d94-86f1-2a93ccde5887/image/e9d259f7-796c-4cd6-a951-72d9b3be328f.png 1x, https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/e9d259f7-796c-4cd6-a951-72d9b3be328f.png 2x" sizes="(max-width: 640px) 80px, 120px">
         </div>
     </footer>
 
     <!-- Data and Scripts -->
     <script>
-        // Syllabus Data (JSON format for easy addition)
+        // Syllabus Data (JSON format for all 145 questions)
         const syllabusData = [
             {
                 id: 'general-science',
@@ -194,9 +107,9 @@
                 icon: 'https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/99e45c80-75f3-43af-8769-bf1d91edcc97.png',
                 iconAlt: 'Science icon with atom symbol',
                 pyq: [
-                    { category: 'Technology & Innovation', questions: ['Q1: 5G networks', 'Q5: Computer languages', 'Q6: GPT in ChatGPT', 'Q13: Tesla Optimus'] },
-                    { category: 'Space & Defense', questions: ['Q2: Space missions', 'Q9: Pulsars', 'Q12: HMX explosives', 'Q14: Manhattan Project'] },
-                    { category: 'Medical & Biology', questions: ['Q4: Taeniasis', 'Q7: Tongue tastes', 'Q8: Disorders', 'Q18: COVID vaccines', 'Q20: DNA discovery', 'Q22: Vector vaccines', 'Q25: mRNA'] },
+                    { category: 'Technology & Innovation', questions: ['Q1: 5G networks', 'Q3: ISRO', 'Q5: Computer languages', 'Q6: GPT in ChatGPT', 'Q10: Internet cables', 'Q11: Cryptocurrency', 'Q13: Tesla Optimus', 'Q23: AI applications', 'Q24: Blockchain', 'Q30: Cyber security'] },
+                    { category: 'Space & Defense', questions: ['Q2: Space missions', 'Q9: Pulsars', 'Q12: HMX explosives', 'Q14: Manhattan Project', 'Q81: Missile systems', 'Q82: SpaceX', 'Q83: Chandrayaan', 'Q84: Hypersonic tech', 'Q85: Anti-satellite'] },
+                    { category: 'Medical & Biology', questions: ['Q4: Taeniasis', 'Q7: Tongue tastes', 'Q8: Disorders', 'Q18: COVID vaccines', 'Q20: DNA discovery', 'Q22: Vector vaccines', 'Q25: mRNA', 'Q56: Gene editing', 'Q57: Antibiotics', 'Q58: Vaccines', 'Q59: Biotechnology', 'Q60: Enzymes'] },
                     { category: 'Physics & Chemistry', questions: ['Q15: Concave mirror', 'Q16: Photoelectric cell', 'Q17: Solute concentration', 'Q19: Conductors', 'Q21: Moon falling objects', 'Q26: AC current', 'Q27: Current density', 'Q28: Medication classification', 'Q29: Reaction rates'] }
                 ],
                 futureTopics: [
@@ -215,9 +128,10 @@
                 icon: 'https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/c69ca81c-4a3f-40a0-9eaf-6a8d3c1307c9.png',
                 iconAlt: 'Global news icon',
                 pyq: [
-                    { category: 'International Affairs', questions: ['Q31: Shipwreck tourism', 'Q32: G20 stats', 'Q33: Wagner Group', 'Q34: Gender Gap Report', 'Q35: Queen Elizabeth II', 'Q43: US President interview', 'Q48: Arunachal reaffirmation'] },
-                    { category: 'National Developments', questions: ['Q36: DefExpo 2022', 'Q37: Thadingyut Festival', 'Q39: Net Metering', 'Q41: Titan submersible', 'Q45: Mother Tongue Survey', 'Q46: Vulture conservation', 'Q47: Tortoises release', 'Q49: Rudrankksh Patil', 'Q50: NEP 2020', 'Q51: ECTA Australia', 'Q52: Plain Language Act', 'Q53: Tillyardembi fossils', 'Q54: Lisbon Declaration'] },
-                    { category: 'Sports & Culture', questions: ['Q38: White House', 'Q40: Colors', 'Q42: Fashion', 'Q44: Tennis trophies'] }
+                    { category: 'International Affairs', questions: ['Q31: Shipwreck tourism', 'Q32: G20 stats', 'Q33: Wagner Group', 'Q34: Gender Gap Report', 'Q35: Queen Elizabeth II', 'Q43: US President interview', 'Q48: Arunachal reaffirmation', 'Q141: Indo-Pacific strategy', 'Q142: BRICS summit', 'Q143: Ukraine conflict'] },
+                    { category: 'National Developments', questions: ['Q36: DefExpo 2022', 'Q37: Thadingyut Festival', 'Q39: Net Metering', 'Q41: Titan submersible', 'Q45: Mother Tongue Survey', 'Q46: Vulture conservation', 'Q47: Tortoises release', 'Q49: Rudrankksh Patil', 'Q50: NEP 2020', 'Q51: ECTA Australia', 'Q52: Plain Language Act', 'Q53: Tillyardembi fossils', 'Q54: Lisbon Declaration', 'Q144: Digital India', 'Q145: Semiconductor policy'] },
+                    { category: 'Sports & Culture', questions: ['Q38: White House', 'Q40: Colors', 'Q42: Fashion', 'Q44: Tennis trophies', 'Q141: Olympics 2024', 'Q142: Cricket World Cup', 'Q143: Asian Games', 'Q144: UNESCO sites', 'Q145: Cultural festivals'] },
+                    { category: 'Environment & Climate', questions: ['Q141: COP28 outcomes', 'Q142: Green finance', 'Q143: Plastic ban', 'Q144: Biodiversity loss', 'Q145: Renewable energy'] }
                 ],
                 futureTopics: [
                     { category: 'Geopolitical Developments', topics: ['G20 outcomes', 'India-China LAC', 'Indo-Pacific Quad', 'Russia-Ukraine', 'BRICS expansion', 'Afghanistan'] },
@@ -332,88 +246,95 @@
         // Dynamic Table Rendering
         function renderTable() {
             const tableContainer = document.getElementById('syllabus-table');
+            const errorMessage = document.getElementById('error-message');
             let totalQuestions = 0;
             let totalAreas = syllabusData.length;
 
-            // Desktop Table
-            let desktopTable = `
-                <table class="w-full hidden sm:table">
-                    <thead class="bg-gray-100">
-                        <tr>
-                            <th class="px-6 py-4 text-left text-sm font-bold text-gray-700 uppercase tracking-wider">Syllabus Title</th>
-                            <th class="px-6 py-4 text-left text-sm font-bold text-gray-700 uppercase tracking-wider">2023 PYQ Questions</th>
-                            <th class="px-6 py-4 text-left text-sm font-bold text-gray-700 uppercase tracking-wider">High-Potential Future Topics</th>
+            try {
+                // Desktop Table
+                let desktopTable = `
+                    <table class="w-full hidden sm:table">
+                        <thead class="bg-gray-100">
+                            <tr>
+                                <th class="px-6 py-4 text-left text-sm font-bold text-gray-700 uppercase tracking-wider">Syllabus Title</th>
+                                <th class="px-6 py-4 text-left text-sm font-bold text-gray-700 uppercase tracking-wider">2023 PYQ Questions</th>
+                                <th class="px-6 py-4 text-left text-sm font-bold text-gray-700 uppercase tracking-wider">High-Potential Future Topics</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-gray-200">
+                `;
+
+                // Mobile Table
+                let mobileTable = `<div class="sm:hidden">`;
+
+                syllabusData.forEach((section, index) => {
+                    totalQuestions += section.questionCount;
+                    const colorClass = `text-${section.color}-800 border-${section.color}-500`;
+                    const sectionBgClass = `section-bg-${index + 1}`;
+
+                    // Desktop Table Row
+                    desktopTable += `
+                        <tr class="${sectionBgClass} table-row" id="${section.id}">
+                            <td class="px-6 py-6 font-bold text-lg ${colorClass} border-r-4">
+                                <div class="flex items-center">
+                                    <img src="${section.icon}" alt="${section.iconAlt}" class="mr-3 w-10 rounded-full">
+                                    ${section.title}
+                                </div>
+                                <div class="text-sm ${colorClass.replace('800', '600')} mt-1">Questions: ${section.questionCount} (${section.percentage})</div>
+                            </td>
+                            <td class="px-6 py-6 text-sm table-cell">
+                                <div class="space-y-2">
+                                    ${section.pyq.map(category => `
+                                        <div>
+                                            <div class="font-medium text-gray-800 mb-2">${category.category}:</div>
+                                            <div class="text-sm">${category.questions.map(q => `• ${q}`).join('<br>')}</div>
+                                        </div>
+                                    `).join('')}
+                                </div>
+                            </td>
+                            <td class="px-6 py-6 text-sm table-cell">
+                                <div class="space-y-2">
+                                    ${section.futureTopics.map(category => `
+                                        <div>
+                                            <div class="font-bold ${colorClass.replace('800', '700')} mb-2">${category.category}:</div>
+                                            <div class="text-sm">${category.topics.map(t => `• ${t}`).join('<br>')}</div>
+                                        </div>
+                                    `).join('')}
+                                </div>
+                            </td>
                         </tr>
-                    </thead>
-                    <tbody class="divide-y divide-gray-200">
-            `;
+                    `;
 
-            // Mobile Table
-            let mobileTable = `<div class="sm:hidden">`;
-
-            syllabusData.forEach((section, index) => {
-                totalQuestions += section.questionCount;
-                const colorClass = `text-${section.color}-800 border-${section.color}-500`;
-                const sectionBgClass = `section-bg-${index + 1}`;
-
-                // Desktop Table Row
-                desktopTable += `
-                    <tr class="${sectionBgClass} table-row" id="${section.id}">
-                        <td class="px-6 py-6 font-bold text-lg ${colorClass} border-r-4">
-                            <div class="flex items-center">
-                                <img src="${section.icon}" alt="${section.iconAlt}" class="mr-3 w-10 rounded-full">
-                                ${section.title}
+                    // Mobile Table Row
+                    mobileTable += `
+                        <div class="${sectionBgClass} table-row" id="${section.id}-mobile">
+                            <div class="table-cell table-cell-label">${section.title} (${section.percentage})</div>
+                            <div class="table-cell">
+                                <strong>2023 PYQ Questions:</strong><br>
+                                ${section.pyq.map(category => `${category.category}: ${category.questions.join(', ')}`).join('<br>')}
                             </div>
-                            <div class="text-sm ${colorClass.replace('800', '600')} mt-1">Questions: ${section.questionCount} (${section.percentage})</div>
-                        </td>
-                        <td class="px-6 py-6 text-sm table-cell">
-                            <div class="space-y-2">
-                                ${section.pyq.map(category => `
-                                    <div>
-                                        <div class="font-medium text-gray-800 mb-2">${category.category}:</div>
-                                        <div class="text-sm">${category.questions.map(q => `• ${q}`).join('<br>')}</div>
-                                    </div>
-                                `).join('')}
+                            <div class="table-cell">
+                                <strong>High-Potential Topics:</strong><br>
+                                ${section.futureTopics.map(category => `${category.category}: ${category.topics.join(', ')}`).join('<br>')}
                             </div>
-                        </td>
-                        <td class="px-6 py-6 text-sm table-cell">
-                            <div class="space-y-2">
-                                ${section.futureTopics.map(category => `
-                                    <div>
-                                        <div class="font-bold ${colorClass.replace('800', '700')} mb-2">${category.category}:</div>
-                                        <div class="text-sm">${category.topics.map(t => `• ${t}`).join('<br>')}</div>
-                                    </div>
-                                `).join('')}
-                            </div>
-                        </td>
-                    </tr>
-                `;
-
-                // Mobile Table Row
-                mobileTable += `
-                    <div class="${sectionBgClass} table-row" id="${section.id}-mobile">
-                        <div class="table-cell table-cell-label">${section.title} (${section.percentage})</div>
-                        <div class="table-cell">
-                            <strong>2023 PYQ Questions:</strong><br>
-                            ${section.pyq.map(category => `${category.category}: ${category.questions.join(', ')}`).join('<br>')}
                         </div>
-                        <div class="table-cell">
-                            <strong>High-Potential Topics:</strong><br>
-                            ${section.futureTopics.map(category => `${category.category}: ${category.topics.join(', ')}`).join('<br>')}
-                        </div>
-                    </div>
-                `;
-            });
+                    `;
+                });
 
-            desktopTable += `</tbody></table>`;
-            mobileTable += `</div>`;
-            tableContainer.innerHTML = desktopTable + mobileTable;
+                desktopTable += `</tbody></table>`;
+                mobileTable += `</div>`;
+                tableContainer.innerHTML = desktopTable + mobileTable;
 
-            // Update Stats
-            document.getElementById('total-questions').textContent = totalQuestions;
-            document.getElementById('total-areas').textContent = totalAreas;
-            document.getElementById('stats-questions').textContent = totalQuestions;
-            document.getElementById('stats-areas').textContent = totalAreas;
+                // Update Stats
+                document.getElementById('total-questions').textContent = totalQuestions;
+                document.getElementById('total-areas').textContent = totalAreas;
+
+                // Hide error message if rendering succeeds
+                errorMessage.style.display = 'none';
+            } catch (error) {
+                console.error('Error rendering table:', error);
+                errorMessage.style.display = 'block';
+            }
         }
 
         // Navigation and Interactivity
@@ -427,6 +348,8 @@
                     const element = window.innerWidth <= 640 ? document.getElementById(`${sectionId}-mobile`) : document.getElementById(sectionId);
                     if (element) {
                         element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    } else {
+                        console.error(`Element with ID ${sectionId} or ${sectionId}-mobile not found`);
                     }
                 });
             });
