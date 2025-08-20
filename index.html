@@ -8,9 +8,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap" rel="stylesheet">
     <style>
         body { font-family: 'Inter', sans-serif; }
-        .gradient-bg { background: linear-gradient(135deg, #6b7280 0%, #4b5563 100%); }
-        .card-shadow { box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); transition: transform 0.2s; }
-        .card-shadow:hover { transform: translateY(-4px); }
+        .gradient-bg { background: linear-gradient(135deg, #4b5e8e 0%, #3b4a6b 100%); }
+        .card-shadow { box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15); transition: transform 0.3s, box-shadow 0.3s; }
+        .card-shadow:hover { transform: translateY(-4px); box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); }
         .table-header { background: linear-gradient(90deg, #3b82f6 0%, #8b5cf6 100%); }
         .section-bg-1 { background: linear-gradient(135deg, #e0f2fe 0%, #bae6fd 100%); }
         .section-bg-2 { background: linear-gradient(135deg, #f3e8ff 0%, #ddd6fe 100%); }
@@ -21,14 +21,17 @@
         .section-bg-7 { background: linear-gradient(135deg, #f0fdf4 0%, #bbf7d0 100%); }
         .nav-button { transition: background-color 0.3s, transform 0.2s; }
         .nav-button:hover { background-color: #2563eb; transform: scale(1.05); }
-        .back-to-top { position: fixed; bottom: 20px; right: 20px; display: none; }
+        .back-to-top { position: fixed; bottom: 20px; right: 20px; display: none; z-index: 100; }
         .sticky-nav { position: sticky; top: 0; z-index: 50; }
         @media (max-width: 640px) {
             .table-container { display: block; }
             .table-row { display: flex; flex-direction: column; margin-bottom: 1.5rem; }
             .table-cell { padding: 1rem; }
             .table-cell-label { font-weight: 700; color: #1f2937; margin-bottom: 0.75rem; font-size: 1.1rem; }
-            .nav-button { margin: 0.25rem; font-size: 0.9rem; }
+            .nav-button { margin: 0.25rem; font-size: 0.9rem; padding: 0.5rem 1rem; }
+        }
+        @media (min-width: 641px) and (max-width: 768px) {
+            .nav-button { font-size: 0.95rem; padding: 0.5rem 1.25rem; }
         }
     </style>
 </head>
@@ -222,8 +225,108 @@
                     { category: 'Sports & Culture', topics: ['Paris Olympics 2024', 'Cricket World Cup', 'Asian Games', 'Cultural diplomacy', 'UNESCO sites'] },
                     { category: 'Climate & Environment', topics: ['COP30 outcomes', 'Net-zero roadmap', 'Biodiversity', 'Plastic waste', 'Green finance'] }
                 ]
+            },
+            {
+                id: 'history',
+                title: 'History of India & Bihar',
+                percentage: '~17%',
+                questionCount: 25,
+                color: 'green',
+                icon: 'https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/ab66bae2-a76a-4f27-8b3e-24f91fa0ad4a.png',
+                iconAlt: 'Ancient Indian temple',
+                pyq: [
+                    { category: 'Ancient & Medieval', questions: ['Q55: Indus Valley', 'Q67: Bodhisattva painting', 'Q68: Fa-Hien/Hiuen Tsang', 'Q69: Scholars', 'Q70: Nowruz', 'Q71: Bhakti groups', 'Q73: Maithili', 'Q74: Magadha capital', 'Q77: Nitisara', 'Q78: Futuhat-i-Alamgiri', 'Q79: Gupta temple'] },
+                    { category: 'Colonial Period', questions: ['Q72: Wood’s Dispatch', 'Q75: Vernacular Press', 'Q76: Mayo’s Resolution', 'Q80: Bihar separation', 'Q126: 1857 Revolt', 'Q130: Lytton policies', 'Q131: Buxar treaty', 'Q132: Dutch factory'] },
+                    { category: 'Freedom Movement', questions: ['Q127: Gandhi saved', 'Q128: Bakasht Movement', 'Q129: Chronology', 'Q133: Gandhi hunger strike', 'Q134: Bihar Kesari', 'Q135: Champaran', 'Q136: Societies', 'Q137: Ambabai', 'Q138: Cabinet Mission', 'Q139: Safety valve', 'Q140: Fundamental Rights'] },
+                    { category: 'Cultural History', questions: ['Q61: Stupa/Chaitya', 'Q62: Sujni', 'Q63: Vikramshila', 'Q64: Babur invasion', 'Q65: Babul fort', 'Q66: Ashtapradhan'] }
+                ],
+                futureTopics: [
+                    { category: 'Ancient Civilization', topics: ['Harappan finds', 'Math/astronomy', 'Trade routes', 'Gupta science', 'Buddhist sites', 'Ancient universities'] },
+                    { category: 'Medieval Period', topics: ['Regional kingdoms', 'Indo-Islamic architecture', 'Sufi/Bhakti', 'Medieval trade', 'Administration', 'Cultural synthesis'] },
+                    { category: 'Colonial Period', topics: ['British economy', 'Education policies', 'Social reforms', 'Peasant movements', 'Press role', 'Constitutional developments'] },
+                    { category: 'Freedom Struggle', topics: ['Lesser-known fighters', 'Regional movements', 'Women’s role', 'Revolutionary movements', 'Quit India', 'Princely states'] },
+                    { category: 'Bihar Specific', topics: ['Magadh empire', 'Buddhist circuit', 'Sher Shah reforms', 'Champaran impact', 'Post-independence politics', 'Cultural heritage'] }
+                ]
+            },
+            {
+                id: 'geography',
+                title: 'Geography (India & Bihar)',
+                percentage: '~14%',
+                questionCount: 20,
+                color: 'orange',
+                icon: 'https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/228494be-9a91-45f7-b4a0-b11e47a88231.png',
+                iconAlt: 'Geographic map',
+                pyq: [
+                    { category: 'Bihar Geography', questions: ['Q86: Parks/Sanctuaries', 'Q87: Gangetic Dolphin', 'Q88: Gandak name', 'Q89: Gold in Jamui', 'Q90: Triveni Canal', 'Q92: Bihar rock systems', 'Q97: Kosi plain height'] },
+                    { category: 'Indian Geography', questions: ['Q91: Gold deposits', 'Q93: Marine biodiversity', 'Q94: Time calculation', 'Q95: Mineral locations', 'Q98: Tropic of Cancer', 'Q99: Uttarakhand border'] },
+                    { category: 'World Geography', questions: ['Q96: Latitudes', 'Q100: El Niño'] }
+                ],
+                futureTopics: [
+                    { category: 'Climate & Environment', topics: ['Monsoon impacts', 'Extreme weather', 'Coastal management', 'Himalayan glaciers', 'Desertification', 'Carbon footprint'] },
+                    { category: 'Water Resources', topics: ['River interlinking', 'Groundwater', 'Flood management', 'Wetlands', 'Water harvesting', 'Interstate disputes'] },
+                    { category: 'Urbanization', topics: ['Smart cities', 'Urban sprawl', 'Transport infrastructure', 'Housing', 'Urban heat', 'Sustainable urban'] },
+                    { category: 'Agriculture & Rural', topics: ['Crop diversification', 'Organic farming', 'Agri-tech', 'Rural employment', 'Land reforms', 'Agri-credit'] },
+                    { category: 'Bihar Specific', topics: ['North Bihar floods', 'Ganga rejuvenation', 'Industrial corridors', 'Tourism', 'Mining', 'Connectivity'] }
+                ]
+            },
+            {
+                id: 'polity',
+                title: 'Indian Polity & Constitution',
+                percentage: '~8%',
+                questionCount: 12,
+                color: 'pink',
+                icon: 'https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/6a8c7b97-5f39-43d8-a23b-dcdc4ac3636f.png',
+                iconAlt: 'Indian Parliament',
+                pyq: [
+                    { category: 'Constitutional Provisions', questions: ['Q101: Collegium system', 'Q102: 42nd Amendment', 'Q103: Scheduled Tribes', 'Q104: Fundamental Rights', 'Q105: Untouchability'] },
+                    { category: 'Governance & Administration', questions: ['Q106: High Court judges', 'Q107: Fifth Schedule', 'Q108: Basic structure', 'Q109: Political parties', 'Q110: Mother tongue', 'Q119: Financial emergency'] }
+                ],
+                futureTopics: [
+                    { category: 'Constitutional Developments', topics: ['103rd-105th amendments', 'SC judgments', 'Privacy rights', 'Electoral reforms', 'Judicial accountability', 'Constitutional morality'] },
+                    { category: 'Electoral System', topics: ['EVM/VVPAT', 'Electoral bonds', 'One Nation One Election', 'Voter verification', 'Campaign finance', 'Party funding'] },
+                    { category: 'Federalism', topics: ['Centre-State relations', 'GST challenges', 'Interstate disputes', 'Cooperative federalism', 'Article 370', 'NITI Aayog'] },
+                    { category: 'Digital Governance', topics: ['Aadhaar privacy', 'Digital India', 'E-governance', 'Cybersecurity', 'Data protection', 'Online dispute resolution'] }
+                ]
+            },
+            {
+                id: 'economy',
+                title: 'Indian Economy & Bihar Development',
+                percentage: '~9%',
+                questionCount: 13,
+                color: 'teal',
+                icon: 'https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/9eb6c5b8-6f97-44da-adb2-7d4d1e851a78.png',
+                iconAlt: 'Economic growth chart',
+                pyq: [
+                    { category: 'Economic Policies', questions: ['Q111: Foreign Exchange', 'Q112: Rules of Origin', 'Q113: Infant mortality', 'Q114: Human capital', 'Q115: Insolvency', 'Q116: Industrial Policy', 'Q117: PLI scheme', 'Q121: FDI trends', 'Q124: Globalization', 'Q125: Fiscal deficit'] },
+                    { category: 'Government Schemes', questions: ['Q118: SVAMITVA', 'Q120: Stagflation', 'Q123: Non-plan expenditure'] },
+                    { category: 'Bihar Specific', questions: ['Q122: Gaya population'] }
+                ],
+                futureTopics: [
+                    { category: 'Post-COVID Recovery', topics: ['Stimulus packages', 'Supply chains', 'MSME rehabilitation', 'Employment schemes', 'Digital payments', 'Health infrastructure'] },
+                    { category: 'Industrial Development', topics: ['PLI expansion', 'Semiconductors', 'EVs', 'Green hydrogen', 'Space economy', 'Defense manufacturing'] },
+                    { category: 'Financial Sector', topics: ['Digital currency', 'Crypto regulation', 'Banking reforms', 'Capital markets', 'Fintech', 'Insurance'] },
+                    { category: 'Sustainable Development', topics: ['Green finance', 'Circular economy', 'Carbon trading', 'ESG investing', 'Climate resilience', 'Natural capital'] },
+                    { category: 'Bihar Development', topics: ['Industrial parks', 'Agri-value chains', 'Skill development', 'Tourism', 'Logistics hubs', 'Digital infrastructure'] }
+                ]
+            },
+            {
+                id: 'mental-ability',
+                title: 'General Mental Ability',
+                percentage: '~3%',
+                questionCount: 5,
+                color: 'green',
+                icon: 'https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/34a66b38-8df2-42f0-9319-67527b9462dc.png',
+                iconAlt: 'Brain with puzzle pieces',
+                pyq: [
+                    { category: 'Reasoning & Logic', questions: ['Q141: Coding-decoding', 'Q142: Direction sense', 'Q143: Land percentage', 'Q144: Odd pair', 'Q145: Number series'] }
+                ],
+                futureTopics: [
+                    { category: 'Analytical Reasoning', topics: ['Data interpretation', 'Logical sequences', 'Pattern recognition', 'Cause-effect', 'Assumptions', 'Critical thinking'] },
+                    { category: 'Quantitative Aptitude', topics: ['Percentages', 'Profit/loss', 'Time/work', 'Speed/distance', 'Probability', 'Geometry'] },
+                    { category: 'Spatial Reasoning', topics: ['Map reading', '3D visualization', 'Mirror images', 'Paper folding', 'Cube/dice', 'Seating arrangements'] },
+                    { category: 'Data Analysis', topics: ['Charts/graphs', 'Statistical analysis', 'Trend identification', 'Comparative data', 'Research methods', 'Surveys'] }
+                ]
             }
-            // Add more sections here (e.g., History, Geography, etc.) following the same structure
         ];
 
         // Dynamic Table Rendering
@@ -248,10 +351,10 @@
             // Mobile Table
             let mobileTable = `<div class="sm:hidden">`;
 
-            syllabusData.forEach(section => {
+            syllabusData.forEach((section, index) => {
                 totalQuestions += section.questionCount;
                 const colorClass = `text-${section.color}-800 border-${section.color}-500`;
-                const sectionBgClass = `section-bg-${syllabusData.indexOf(section) + 1}`;
+                const sectionBgClass = `section-bg-${index + 1}`;
 
                 // Desktop Table Row
                 desktopTable += `
@@ -313,7 +416,7 @@
             document.getElementById('stats-areas').textContent = totalAreas;
         }
 
-        // Navigation Scroll
+        // Navigation and Interactivity
         document.addEventListener('DOMContentLoaded', () => {
             renderTable();
 
@@ -341,7 +444,7 @@
             document.querySelectorAll('.table-cell').forEach(cell => {
                 cell.addEventListener('click', () => {
                     if (window.innerWidth <= 640) {
-                        cell.style.maxHeight = cell.style.maxHeight === 'none' ? '300px' : 'none';
+                        cell.style.maxHeight = cell.style.maxHeight === 'none' ? '400px' : 'none';
                         cell.style.overflow = cell.style.overflow === 'auto' ? 'hidden' : 'auto';
                     }
                 });
