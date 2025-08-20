@@ -5,247 +5,340 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>BPSC Syllabus Analysis & Future Predictions</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap" rel="stylesheet">
     <style>
-        .gradient-bg {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-        }
-        .card-shadow {
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-        }
-        .table-header {
-            background: linear-gradient(90deg, #4F46E5 0%, #7C3AED 100%);
-        }
-        .section-bg-1 { background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%); }
-        .section-bg-2 { background: linear-gradient(135deg, #f3e5f5 0%, #ce93d8 100%); }
-        .section-bg-3 { background: linear-gradient(135deg, #e8f5e8 0%, #a5d6a7 100%); }
-        .section-bg-4 { background: linear-gradient(135deg, #fff3e0 0%, #ffcc80 100%); }
-        .section-bg-5 { background: linear-gradient(135deg, #fce4ec 0%, #f8bbd9 100%); }
-        .section-bg-6 { background: linear-gradient(135deg, #e0f2f1 0%, #80cbc4 100%); }
-        .section-bg-7 { background: linear-gradient(135deg, #f1f8e9 0%, #c5e1a5 100%); }
-        .section-bg-8 { background: linear-gradient(135deg, #e8eaf6 0%, #c5cae9 100%); }
-        /* Mobile table styling */
+        body { font-family: 'Inter', sans-serif; }
+        .gradient-bg { background: linear-gradient(135deg, #6b7280 0%, #4b5563 100%); }
+        .card-shadow { box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); transition: transform 0.2s; }
+        .card-shadow:hover { transform: translateY(-4px); }
+        .table-header { background: linear-gradient(90deg, #3b82f6 0%, #8b5cf6 100%); }
+        .section-bg-1 { background: linear-gradient(135deg, #e0f2fe 0%, #bae6fd 100%); }
+        .section-bg-2 { background: linear-gradient(135deg, #f3e8ff 0%, #ddd6fe 100%); }
+        .section-bg-3 { background: linear-gradient(135deg, #ecfdf5 0%, #a7f3d0 100%); }
+        .section-bg-4 { background: linear-gradient(135deg, #fef3c7 0%, #fcd34d 100%); }
+        .section-bg-5 { background: linear-gradient(135deg, #fce7f3 0%, #fbcfe8 100%); }
+        .section-bg-6 { background: linear-gradient(135deg, #ccfbf1 0%, #99f6e4 100%); }
+        .section-bg-7 { background: linear-gradient(135deg, #f0fdf4 0%, #bbf7d0 100%); }
+        .nav-button { transition: background-color 0.3s, transform 0.2s; }
+        .nav-button:hover { background-color: #2563eb; transform: scale(1.05); }
+        .back-to-top { position: fixed; bottom: 20px; right: 20px; display: none; }
+        .sticky-nav { position: sticky; top: 0; z-index: 50; }
         @media (max-width: 640px) {
             .table-container { display: block; }
-            .table-row { display: flex; flex-direction: column; margin-bottom: 1rem; }
-            .table-cell { padding: 0.75rem; }
-            .table-cell-label { font-weight: bold; color: #1f2937; margin-bottom: 0.5rem; }
+            .table-row { display: flex; flex-direction: column; margin-bottom: 1.5rem; }
+            .table-cell { padding: 1rem; }
+            .table-cell-label { font-weight: 700; color: #1f2937; margin-bottom: 0.75rem; font-size: 1.1rem; }
+            .nav-button { margin: 0.25rem; font-size: 0.9rem; }
         }
     </style>
 </head>
-<body class="bg-gray-50 min-h-screen font-sans">
-    <div class="gradient-bg text-white py-6 sm:py-8">
+<body class="bg-gray-100 min-h-screen">
+    <!-- Navigation Bar -->
+    <nav class="sticky-nav bg-white shadow-lg py-4">
+        <div class="container mx-auto px-4 sm:px-6 flex flex-wrap justify-center gap-2 sm:gap-4">
+            <button class="nav-button bg-blue-600 text-white px-4 py-2 rounded-lg text-sm sm:text-base" data-section="general-science">General Science</button>
+            <button class="nav-button bg-purple-600 text-white px-4 py-2 rounded-lg text-sm sm:text-base" data-section="current-events">Current Events</button>
+            <button class="nav-button bg-green-600 text-white px-4 py-2 rounded-lg text-sm sm:text-base" data-section="history">History</button>
+            <button class="nav-button bg-orange-600 text-white px-4 py-2 rounded-lg text-sm sm:text-base" data-section="geography">Geography</button>
+            <button class="nav-button bg-pink-600 text-white px-4 py-2 rounded-lg text-sm sm:text-base" data-section="polity">Polity</button>
+            <button class="nav-button bg-teal-600 text-white px-4 py-2 rounded-lg text-sm sm:text-base" data-section="economy">Economy</button>
+            <button class="nav-button bg-green-700 text-white px-4 py-2 rounded-lg text-sm sm:text-base" data-section="mental-ability">Mental Ability</button>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <div class="gradient-bg text-white py-8 sm:py-12">
         <div class="container mx-auto px-4 sm:px-6">
-            <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/d52b367e-5068-4d98-a7b3-5b03a1c530c9.png" alt="BPSC logo with Bihar state emblem" class="mx-auto mb-4 w-24 sm:w-32 rounded-lg shadow-lg" srcset="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/d52b367e-5068-4d98-a7b3-5b03a1c530c9.png 1x, https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/d52b367e-5068-4d98-a7b3-5b03a1c530c9.png 2x" sizes="(max-width: 640px) 100px, 150px">
-            <h1 class="text-2xl sm:text-3xl md:text-4xl font-bold text-center mb-2">BPSC Syllabus Analysis & Future Predictions</h1>
-            <p class="text-base sm:text-lg text-center opacity-90">Comprehensive Mapping of 2023 PYQ with High-Potential Topics</p>
-            <div class="flex flex-wrap justify-center mt-4 space-x-4 sm:space-x-6 text-sm">
-                <div class="bg-white bg-opacity-20 px-3 py-2 rounded-full"><span class="font-semibold">Questions Analyzed:</span> 145</div>
-                <div class="bg-white bg-opacity-20 px-3 py-2 rounded-full"><span class="font-semibold">Syllabus Areas:</span> 7</div>
-                <div class="bg-white bg-opacity-20 px-3 py-2 rounded-full"><span class="font-semibold">Prediction Accuracy:</span> 85%+</div>
+            <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/d52b367e-5068-4d98-a7b3-5b03a1c530c9.png" alt="BPSC logo with Bihar state emblem" class="mx-auto mb-6 w-24 sm:w-32 rounded-lg shadow-lg" srcset="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/d52b367e-5068-4d98-a7b3-5b03a1c530c9.png 1x, https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/d52b367e-5068-4d98-a7b3-5b03a1c530c9.png 2x" sizes="(max-width: 640px) 100px, 150px">
+            <h1 class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-center mb-3">BPSC Syllabus Analysis & Predictions</h1>
+            <p class="text-lg sm:text-xl text-center opacity-90">Comprehensive Mapping of PYQs with High-Potential Topics</p>
+            <div class="flex flex-wrap justify-center mt-6 gap-4 sm:gap-6">
+                <div class="bg-white bg-opacity-20 px-4 py-2 rounded-full text-sm sm:text-base"><span class="font-semibold">Questions Analyzed:</span> <span id="total-questions">145</span></div>
+                <div class="bg-white bg-opacity-20 px-4 py-2 rounded-full text-sm sm:text-base"><span class="font-semibold">Syllabus Areas:</span> <span id="total-areas">7</span></div>
+                <div class="bg-white bg-opacity-20 px-4 py-2 rounded-full text-sm sm:text-base"><span class="font-semibold">Prediction Accuracy:</span> 85%+</div>
             </div>
         </div>
     </div>
 
-    <div class="container mx-auto px-4 sm:px-6 py-6 sm:py-8">
+    <!-- Main Content -->
+    <div class="container mx-auto px-4 sm:px-6 py-8 sm:py-12">
         <!-- Summary Statistics -->
-        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 mb-6 sm:mb-8">
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 mb-8 sm:mb-12">
             <div class="bg-white p-4 sm:p-6 rounded-lg card-shadow text-center">
-                <div class="text-2xl sm:text-3xl font-bold text-blue-600 mb-2">35</div>
-                <div class="text-sm sm:text-base text-gray-600">Science & Technology</div>
+                <div class="text-3xl sm:text-4xl font-bold text-blue-600 mb-2">35</div>
+                <div class="text-base sm:text-lg text-gray-600">Science & Technology</div>
             </div>
             <div class="bg-white p-4 sm:p-6 rounded-lg card-shadow text-center">
-                <div class="text-2xl sm:text-3xl font-bold text-purple-600 mb-2">40</div>
-                <div class="text-sm sm:text-base text-gray-600">Current Affairs</div>
+                <div class="text-3xl sm:text-4xl font-bold text-purple-600 mb-2">40</div>
+                <div class="text-base sm:text-lg text-gray-600">Current Affairs</div>
             </div>
             <div class="bg-white p-4 sm:p-6 rounded-lg card-shadow text-center">
-                <div class="text-2xl sm:text-3xl font-bold text-green-600 mb-2">25</div>
-                <div class="text-sm sm:text-base text-gray-600">History Questions</div>
+                <div class="text-3xl sm:text-4xl font-bold text-green-600 mb-2">25</div>
+                <div class="text-base sm:text-lg text-gray-600">History Questions</div>
             </div>
             <div class="bg-white p-4 sm:p-6 rounded-lg card-shadow text-center">
-                <div class="text-2xl sm:text-3xl font-bold text-orange-600 mb-2">45</div>
-                <div class="text-sm sm:text-base text-gray-600">Other Subjects</div>
+                <div class="text-3xl sm:text-4xl font-bold text-orange-600 mb-2">45</div>
+                <div class="text-base sm:text-lg text-gray-600">Other Subjects</div>
             </div>
         </div>
 
-        <!-- Main Analysis Table -->
+        <!-- Analysis Table -->
         <div class="bg-white rounded-lg card-shadow">
             <div class="table-header text-white p-4 sm:p-6">
-                <h2 class="text-xl sm:text-2xl font-bold text-center">Comprehensive Syllabus Analysis Table</h2>
+                <h2 class="text-xl sm:text-2xl font-bold text-center">Comprehensive Syllabus Analysis</h2>
             </div>
-            <div class="table-container">
-                <table class="w-full hidden sm:table">
-                    <thead class="bg-gray-100">
-                        <tr>
-                            <th class="px-4 sm:px-6 py-3 sm:py-4 text-left text-xs sm:text-sm font-bold text-gray-700 uppercase tracking-wider">Syllabus Title</th>
-                            <th class="px-4 sm:px-6 py-3 sm:py-4 text-left text-xs sm:text-sm font-bold text-gray-700 uppercase tracking-wider">2023 PYQ Questions</th>
-                            <th class="px-4 sm:px-6 py-3 sm:py-4 text-left text-xs sm:text-sm font-bold text-gray-700 uppercase tracking-wider">High-Potential Future Topics</th>
-                        </tr>
-                    </thead>
-                    <tbody class="divide-y divide-gray-200">
-                        <tr class="section-bg-1 table-row">
-                            <td class="px-4 sm:px-6 py-4 sm:py-6 font-bold text-base sm:text-lg text-blue-800 border-r-2 sm:border-r-4 border-blue-500">
-                                <div class="flex items-center">
-                                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/99e45c80-75f3-43af-8769-bf1d91edcc97.png" alt="Science icon with atom symbol" class="mr-2 sm:mr-3 w-8 sm:w-10 rounded-full">
-                                    General Science
-                                </div>
-                                <div class="text-xs sm:text-sm text-blue-600 mt-1">Questions: 35 (~24%)</div>
-                            </td>
-                            <td class="px-4 sm:px-6 py-4 sm:py-6 text-sm table-cell"><div class="space-y-2"><div class="font-medium text-gray-800 mb-2">Technology & Innovation:</div><div class="text-xs sm:text-sm">• Q1: 5G networks<br>• Q5: Computer languages<br>• Q6: GPT in ChatGPT<br>• Q13: Tesla Optimus</div><div class="font-medium text-gray-800 mb-2 mt-3">Space & Defense:</div><div class="text-xs sm:text-sm">• Q2: Space missions<br>• Q9: Pulsars<br>• Q12: HMX explosives<br>• Q14: Manhattan Project</div><div class="font-medium text-gray-800 mb-2 mt-3">Medical & Biology:</div><div class="text-xs sm:text-sm">• Q4: Taeniasis<br>• Q7: Tongue tastes<br>• Q8: Disorders<br>• Q18: COVID vaccines<br>• Q20: DNA discovery<br>• Q22: Vector vaccines<br>• Q25: mRNA</div><div class="font-medium text-gray-800 mb-2 mt-3">Physics & Chemistry:</div><div class="text-xs sm:text-sm">• Q15: Concave mirror<br>• Q16: Photoelectric cell<br>• Q17: Solute concentration<br>• Q19: Conductors<br>• Q21: Moon falling objects<br>• Q26: AC current<br>• Q27: Current density<br>• Q28: Medication classification<br>• Q29: Reaction rates</div></div></td>
-                            <td class="px-4 sm:px-6 py-4 sm:py-6 text-sm table-cell"><div class="space-y-2"><div class="font-bold text-blue-700 mb-2">Emerging Technologies:</div><div class="text-xs sm:text-sm">• AI/ML applications<br>• Quantum computing<br>• Blockchain<br>• IoT in smart cities<br>• AR/VR</div><div class="font-bold text-blue-700 mb-2 mt-3">Space & Defense:</div><div class="text-xs sm:text-sm">• Chandrayaan-3<br>• Aditya L1<br>• Commercial space<br>• Satellite constellations<br>• Space warfare</div><div class="font-bold text-blue-700 mb-2 mt-3">Biotechnology:</div><div class="text-xs sm:text-sm">• CRISPR<br>• Personalized medicine<br>• Synthetic biology<br>• Vaccines<br>• Organ transplantation</div><div class="font-bold text-blue-700 mb-2 mt-3">Energy & Environment:</div><div class="text-xs sm:text-sm">• Green hydrogen<br>• Nuclear fusion<br>• Carbon capture<br>• Solar cells<br>• EV batteries</div></td>
-                        </tr>
-                        <tr class="section-bg-2 table-row">
-                            <td class="px-4 sm:px-6 py-4 sm:py-6 font-bold text-base sm:text-lg text-purple-800 border-r-2 sm:border-r-4 border-purple-500">
-                                <div class="flex items-center">
-                                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/c69ca81c-4a3f-40a0-9eaf-6a8d3c1307c9.png" alt="Global news icon" class="mr-2 sm:mr-3 w-8 sm:w-10 rounded-full">
-                                    Current Events
-                                </div>
-                                <div class="text-xs sm:text-sm text-purple-600 mt-1">Questions: 40 (~28%)</div>
-                            </td>
-                            <td class="px-4 sm:px-6 py-4 sm:py-6 text-sm table-cell"><div class="space-y-2"><div class="font-medium text-gray-800 mb-2">International Affairs:</div><div class="text-xs sm:text-sm">• Q31: Shipwreck tourism<br>• Q32: G20 stats<br>• Q33: Wagner Group<br>• Q34: Gender Gap Report<br>• Q35: Queen Elizabeth II<br>• Q43: US President interview<br>• Q48: Arunachal reaffirmation</div><div class="font-medium text-gray-800 mb-2 mt-3">National Developments:</div><div class="text-xs sm:text-sm">• Q36: DefExpo 2022<br>• Q37: Thadingyut Festival<br>• Q39: Net Metering<br>• Q41: Titan submersible<br>• Q45: Mother Tongue Survey<br>• Q46: Vulture conservation<br>• Q47: Tortoises release<br>• Q49: Rudrankksh Patil<br>• Q50: NEP 2020<br>• Q51: ECTA Australia<br>• Q52: Plain Language Act<br>• Q53: Tillyardembi fossils<br>• Q54: Lisbon Declaration</div><div class="font-medium text-gray-800 mb-2 mt-3">Sports & Culture:</div><div class="text-xs sm:text-sm">• Q38: White House<br>• Q40: Colors<br>• Q42: Fashion<br>• Q44: Tennis trophies</div></div></td>
-                            <td class="px-4 sm:px-6 py-4 sm:py-6 text-sm table-cell"><div class="space-y-2"><div class="font-bold text-purple-700 mb-2">Geopolitical Developments:</div><div class="text-xs sm:text-sm">• G20 outcomes<br>• India-China LAC<br>• Indo-Pacific Quad<br>• Russia-Ukraine<br>• BRICS expansion<br>• Afghanistan</div><div class="font-bold text-purple-700 mb-2 mt-3">National Achievements:</div><div class="text-xs sm:text-sm">• Chandrayaan-3<br>• Semiconductors<br>• UPI expansion<br>• Renewables<br>• Startups<br>• Infrastructure</div><div class="font-bold text-purple-700 mb-2 mt-3">Sports & Culture:</div><div class="text-xs sm:text-sm">• Paris Olympics 2024<br>• Cricket World Cup<br>• Asian Games<br>• Cultural diplomacy<br>• UNESCO sites</div><div class="font-bold text-purple-700 mb-2 mt-3">Climate & Environment:</div><div class="text-xs sm:text-sm">• COP30 outcomes<br>• Net-zero roadmap<br>• Biodiversity<br>• Plastic waste<br>• Green finance</div></td>
-                        </tr>
-                        <tr class="section-bg-3 table-row">
-                            <td class="px-4 sm:px-6 py-4 sm:py-6 font-bold text-base sm:text-lg text-green-800 border-r-2 sm:border-r-4 border-green-500">
-                                <div class="flex items-center">
-                                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/ab66bae2-a76a-4f27-8b3e-24f91fa0ad4a.png" alt="Ancient Indian temple" class="mr-2 sm:mr-3 w-8 sm:w-10 rounded-full">
-                                    History of India & Bihar
-                                </div>
-                                <div class="text-xs sm:text-sm text-green-600 mt-1">Questions: 25 (~17%)</div>
-                            </td>
-                            <td class="px-4 sm:px-6 py-4 sm:py-6 text-sm table-cell"><div class="space-y-2"><div class="font-medium text-gray-800 mb-2">Ancient & Medieval:</div><div class="text-xs sm:text-sm">• Q55: Indus Valley<br>• Q67: Bodhisattva painting<br>• Q68: Fa-Hien/Hiuen Tsang<br>• Q69: Scholars<br>• Q70: Nowruz<br>• Q71: Bhakti groups<br>• Q73: Maithili<br>• Q74: Magadha capital<br>• Q77: Nitisara<br>• Q78: Futuhat-i-Alamgiri<br>• Q79: Gupta temple</div><div class="font-medium text-gray-800 mb-2 mt-3">Colonial Period:</div><div class="text-xs sm:text-sm">• Q72: Wood’s Dispatch<br>• Q75: Vernacular Press<br>• Q76: Mayo’s Resolution<br>• Q80: Bihar separation<br>• Q126: 1857 Revolt<br>• Q130: Lytton policies<br>• Q131: Buxar treaty<br>• Q132: Dutch factory</div><div class="font-medium text-gray-800 mb-2 mt-3">Freedom Movement:</div><div class="text-xs sm:text-sm">• Q127: Gandhi saved<br>• Q128: Bakasht Movement<br>• Q129: Chronology<br>• Q133: Gandhi hunger strike<br>• Q134: Bihar Kesari<br>• Q135: Champaran<br>• Q136: Societies<br>• Q137: Ambabai<br>• Q138: Cabinet Mission<br>• Q139: Safety valve<br>• Q140: Fundamental Rights</div><div class="font-medium text-gray-800 mb-2 mt-3">Cultural History:</div><div class="text-xs sm:text-sm">• Q61: Stupa/Chaitya<br>• Q62: Sujni<br>• Q63: Vikramshila<br>• Q64: Babur invasion<br>• Q65: Babul fort<br>• Q66: Ashtapradhan</div></div></td>
-                            <td class="px-4 sm:px-6 py-4 sm:py-6 text-sm table-cell"><div class="space-y-2"><div class="font-bold text-green-700 mb-2">Ancient Civilization:</div><div class="text-xs sm:text-sm">• Harappan finds<br>• Math/astronomy<br>• Trade routes<br>• Gupta science<br>• Buddhist sites<br>• Ancient universities</div><div class="font-bold text-green-700 mb-2 mt-3">Medieval Period:</div><div class="text-xs sm:text-sm">• Regional kingdoms<br>• Indo-Islamic architecture<br>• Sufi/Bhakti<br>• Medieval trade<br>• Administration<br>• Cultural synthesis</div><div class="font-bold text-green-700 mb-2 mt-3">Colonial Period:</div><div class="text-xs sm:text-sm">• British economy<br>• Education policies<br>• Social reforms<br>• Peasant movements<br>• Press role<br>• Constitutional developments</div><div class="font-bold text-green-700 mb-2 mt-3">Freedom Struggle:</div><div class="text-xs sm:text-sm">• Lesser-known fighters<br>• Regional movements<br>• Women’s role<br>• Revolutionary movements<br>• Quit India<br>• Princely states</div><div class="font-bold text-green-700 mb-2 mt-3">Bihar Specific:</div><div class="text-xs sm:text-sm">• Magadh empire<br>• Buddhist circuit<br>• Sher Shah reforms<br>• Champaran impact<br>• Post-independence politics<br>• Cultural heritage</div></td>
-                        </tr>
-                        <tr class="section-bg-4 table-row">
-                            <td class="px-4 sm:px-6 py-4 sm:py-6 font-bold text-base sm:text-lg text-orange-800 border-r-2 sm:border-r-4 border-orange-500">
-                                <div class="flex items-center">
-                                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/228494be-9a91-45f7-b4a0-b11e47a88231.png" alt="Geographic map" class="mr-2 sm:mr-3 w-8 sm:w-10 rounded-full">
-                                    Geography (India & Bihar)
-                                </div>
-                                <div class="text-xs sm:text-sm text-orange-600 mt-1">Questions: 20 (~14%)</div>
-                            </td>
-                            <td class="px-4 sm:px-6 py-4 sm:py-6 text-sm table-cell"><div class="space-y-2"><div class="font-medium text-gray-800 mb-2">Bihar Geography:</div><div class="text-xs sm:text-sm">• Q86: Parks/Sanctuaries<br>• Q87: Gangetic Dolphin<br>• Q88: Gandak name<br>• Q89: Gold in Jamui<br>• Q90: Triveni Canal<br>• Q92: Bihar rock systems<br>• Q97: Kosi plain height</div><div class="font-medium text-gray-800 mb-2 mt-3">Indian Geography:</div><div class="text-xs sm:text-sm">• Q91: Gold deposits<br>• Q93: Marine biodiversity<br>• Q94: Time calculation<br>• Q95: Mineral locations<br>• Q98: Tropic of Cancer<br>• Q99: Uttarakhand border</div><div class="font-medium text-gray-800 mb-2 mt-3">World Geography:</div><div class="text-xs sm:text-sm">• Q96: Latitudes<br>• Q100: El Niño</div></div></td>
-                            <td class="px-4 sm:px-6 py-4 sm:py-6 text-sm table-cell"><div class="space-y-2"><div class="font-bold text-orange-700 mb-2">Climate & Environment:</div><div class="text-xs sm:text-sm">• Monsoon impacts<br>• Extreme weather<br>• Coastal management<br>• Himalayan glaciers<br>• Desertification<br>• Carbon footprint</div><div class="font-bold text-orange-700 mb-2 mt-3">Water Resources:</div><div class="text-xs sm:text-sm">• River interlinking<br>• Groundwater<br>• Flood management<br>• Wetlands<br>• Water harvesting<br>• Interstate disputes</div><div class="font-bold text-orange-700 mb-2 mt-3">Urbanization:</div><div class="text-xs sm:text-sm">• Smart cities<br>• Urban sprawl<br>• Transport infrastructure<br>• Housing<br>• Urban heat<br>• Sustainable urban</div><div class="font-bold text-orange-700 mb-2 mt-3">Agriculture & Rural:</div><div class="text-xs sm:text-sm">• Crop diversification<br>• Organic farming<br>• Agri-tech<br>• Rural employment<br>• Land reforms<br>• Agri-credit</div><div class="font-bold text-orange-700 mb-2 mt-3">Bihar Specific:</div><div class="text-xs sm:text-sm">• North Bihar floods<br>• Ganga rejuvenation<br>• Industrial corridors<br>• Tourism<br>• Mining<br>• Connectivity</div></td>
-                        </tr>
-                        <tr class="section-bg-5 table-row">
-                            <td class="px-4 sm:px-6 py-4 sm:py-6 font-bold text-base sm:text-lg text-pink-800 border-r-2 sm:border-r-4 border-pink-500">
-                                <div class="flex items-center">
-                                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/6a8c7b97-5f39-43d8-a23b-dcdc4ac3636f.png" alt="Indian Parliament" class="mr-2 sm:mr-3 w-8 sm:w-10 rounded-full">
-                                    Indian Polity & Constitution
-                                </div>
-                                <div class="text-xs sm:text-sm text-pink-600 mt-1">Questions: 12 (~8%)</div>
-                            </td>
-                            <td class="px-4 sm:px-6 py-4 sm:py-6 text-sm table-cell"><div class="space-y-2"><div class="font-medium text-gray-800 mb-2">Constitutional Provisions:</div><div class="text-xs sm:text-sm">• Q101: Collegium system<br>• Q102: 42nd Amendment<br>• Q103: Scheduled Tribes<br>• Q104: Fundamental Rights<br>• Q105: Untouchability</div><div class="font-medium text-gray-800 mb-2 mt-3">Governance & Administration:</div><div class="text-xs sm:text-sm">• Q106: High Court judges<br>• Q107: Fifth Schedule<br>• Q108: Basic structure<br>• Q109: Political parties<br>• Q110: Mother tongue<br>• Q119: Financial emergency</div></div></td>
-                            <td class="px-4 sm:px-6 py-4 sm:py-6 text-sm table-cell"><div class="space-y-2"><div class="font-bold text-pink-700 mb-2">Constitutional Developments:</div><div class="text-xs sm:text-sm">• 103rd-105th amendments<br>• SC judgments<br>• Privacy rights<br>• Electoral reforms<br>• Judicial accountability<br>• Constitutional morality</div><div class="font-bold text-pink-700 mb-2 mt-3">Electoral System:</div><div class="text-xs sm:text-sm">• EVM/VVPAT<br>• Electoral bonds<br>• One Nation One Election<br>• Voter verification<br>• Campaign finance<br>• Party funding</div><div class="font-bold text-pink-700 mb-2 mt-3">Federalism:</div><div class="text-xs sm:text-sm">• Centre-State relations<br>• GST challenges<br>• Interstate disputes<br>• Cooperative federalism<br>• Article 370<br>• NITI Aayog</div><div class="font-bold text-pink-700 mb-2 mt-3">Digital Governance:</div><div class="text-xs sm:text-sm">• Aadhaar privacy<br>• Digital India<br>• E-governance<br>• Cybersecurity<br>• Data protection<br>• Online dispute resolution</div></td>
-                        </tr>
-                        <tr class="section-bg-6 table-row">
-                            <td class="px-4 sm:px-6 py-4 sm:py-6 font-bold text-base sm:text-lg text-teal-800 border-r-2 sm:border-r-4 border-teal-500">
-                                <div class="flex items-center">
-                                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/9eb6c5b8-6f97-44da-adb2-7d4d1e851a78.png" alt="Economic growth chart" class="mr-2 sm:mr-3 w-8 sm:w-10 rounded-full">
-                                    Indian Economy & Bihar Development
-                                </div>
-                                <div class="text-xs sm:text-sm text-teal-600 mt-1">Questions: 13 (~9%)</div>
-                            </td>
-                            <td class="px-4 sm:px-6 py-4 sm:py-6 text-sm table-cell"><div class="space-y-2"><div class="font-medium text-gray-800 mb-2">Economic Policies:</div><div class="text-xs sm:text-sm">• Q111: Foreign Exchange<br>• Q112: Rules of Origin<br>• Q113: Infant mortality<br>• Q114: Human capital<br>• Q115: Insolvency<br>• Q116: Industrial Policy<br>• Q117: PLI scheme<br>• Q121: FDI trends<br>• Q124: Globalization<br>• Q125: Fiscal deficit</div><div class="font-medium text-gray-800 mb-2 mt-3">Government Schemes:</div><div class="text-xs sm:text-sm">• Q118: SVAMITVA<br>• Q120: Stagflation<br>• Q123: Non-plan expenditure</div><div class="font-medium text-gray-800 mb-2 mt-3">Bihar Specific:</div><div class="text-xs sm:text-sm">• Q122: Gaya population</div></div></td>
-                            <td class="px-4 sm:px-6 py-4 sm:py-6 text-sm table-cell"><div class="space-y-2"><div class="font-bold text-teal-700 mb-2">Post-COVID Recovery:</div><div class="text-xs sm:text-sm">• Stimulus packages<br>• Supply chains<br>• MSME rehabilitation<br>• Employment schemes<br>• Digital payments<br>• Health infrastructure</div><div class="font-bold text-teal-700 mb-2 mt-3">Industrial Development:</div><div class="text-xs sm:text-sm">• PLI expansion<br>• Semiconductors<br>• EVs<br>• Green hydrogen<br>• Space economy<br>• Defense manufacturing</div><div class="font-bold text-teal-700 mb-2 mt-3">Financial Sector:</div><div class="text-xs sm:text-sm">• Digital currency<br>• Crypto regulation<br>• Banking reforms<br>• Capital markets<br>• Fintech<br>• Insurance</div><div class="font-bold text-teal-700 mb-2 mt-3">Sustainable Development:</div><div class="text-xs sm:text-sm">• Green finance<br>• Circular economy<br>• Carbon trading<br>• ESG investing<br>• Climate resilience<br>• Natural capital</div><div class="font-bold text-teal-700 mb-2 mt-3">Bihar Development:</div><div class="text-xs sm:text-sm">• Industrial parks<br>• Agri-value chains<br>• Skill development<br>• Tourism<br>• Logistics hubs<br>• Digital infrastructure</div></td>
-                        </tr>
-                        <tr class="section-bg-7 table-row">
-                            <td class="px-4 sm:px-6 py-4 sm:py-6 font-bold text-base sm:text-lg text-green-800 border-r-2 sm:border-r-4 border-green-500">
-                                <div class="flex items-center">
-                                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/34a66b38-8df2-42f0-9319-67527b9462dc.png" alt="Brain with puzzle pieces" class="mr-2 sm:mr-3 w-8 sm:w-10 rounded-full">
-                                    General Mental Ability
-                                </div>
-                                <div class="text-xs sm:text-sm text-green-600 mt-1">Questions: 5 (~3%)</div>
-                            </td>
-                            <td class="px-4 sm:px-6 py-4 sm:py-6 text-sm table-cell"><div class="space-y-2"><div class="font-medium text-gray-800 mb-2">Reasoning & Logic:</div><div class="text-xs sm:text-sm">• Q141: Coding-decoding<br>• Q142: Direction sense<br>• Q143: Land percentage<br>• Q144: Odd pair<br>• Q145: Number series</div></div></td>
-                            <td class="px-4 sm:px-6 py-4 sm:py-6 text-sm table-cell"><div class="space-y-2"><div class="font-bold text-green-700 mb-2">Analytical Reasoning:</div><div class="text-xs sm:text-sm">• Data interpretation<br>• Logical sequences<br>• Pattern recognition<br>• Cause-effect<br>• Assumptions<br>• Critical thinking</div><div class="font-bold text-green-700 mb-2 mt-3">Quantitative Aptitude:</div><div class="text-xs sm:text-sm">• Percentages<br>• Profit/loss<br>• Time/work<br>• Speed/distance<br>• Probability<br>• Geometry</div><div class="font-bold text-green-700 mb-2 mt-3">Spatial Reasoning:</div><div class="text-xs sm:text-sm">• Map reading<br>• 3D visualization<br>• Mirror images<br>• Paper folding<br>• Cube/dice<br>• Seating arrangements</div><div class="font-bold text-green-700 mb-2 mt-3">Data Analysis:</div><div class="text-xs sm:text-sm">• Charts/graphs<br>• Statistical analysis<br>• Trend identification<br>• Comparative data<br>• Research methods<br>• Surveys</div></td>
-                        </tr>
-                    </tbody>
-                </table>
-                <!-- Mobile Table View -->
-                <div class="sm:hidden">
-                    <div class="table-row section-bg-1">
-                        <div class="table-cell table-cell-label">General Science (~24%)</div>
-                        <div class="table-cell"><strong>2023 PYQ Questions:</strong><br>Technology: Q1, Q5, Q6, Q13<br>Space/Defense: Q2, Q9, Q12, Q14<br>Medical/Biology: Q4, Q7, Q8, Q18, Q20, Q22, Q25<br>Physics/Chemistry: Q15, Q16, Q17, Q19, Q21, Q26, Q27, Q28, Q29</div>
-                        <div class="table-cell"><strong>High-Potential Topics:</strong><br>AI/ML, Quantum computing, Blockchain, IoT, AR/VR, Chandrayaan-3, Aditya L1, Satellites, Space warfare, CRISPR, Personalized medicine, Vaccines, Green hydrogen, Nuclear fusion, Carbon capture, Solar cells, EV batteries</div>
+            <div class="table-container" id="syllabus-table">
+                <!-- Table content will be dynamically populated -->
+            </div>
+        </div>
+
+        <!-- Future Trends -->
+        <div class="mt-8 sm:mt-12 bg-white rounded-lg card-shadow p-4 sm:p-6">
+            <h3 class="text-xl sm:text-2xl font-bold text-gray-800 mb-4 sm:mb-6 text-center">🔮 Future Question Trends</h3>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
+                <div class="bg-gradient-to-br from-blue-50 to-blue-100 p-4 rounded-lg card-shadow">
+                    <h4 class="font-bold text-blue-800 mb-2">Technology Focus</h4>
+                    <ul class="text-sm text-blue-700 space-y-1">
+                        <li>• AI/ML in Governance</li><li>• Quantum Technology</li><li>• Space Tech</li><li>• Biotech Innovations</li><li>• Green Energy</li>
+                    </ul>
+                </div>
+                <div class="bg-gradient-to-br from-green-50 to-green-100 p-4 rounded-lg card-shadow">
+                    <h4 class="font-bold text-green-800 mb-2">Contemporary Issues</h4>
+                    <ul class="text-sm text-green-700 space-y-1">
+                        <li>• Climate Change</li><li>• Sustainable Development</li><li>• Digital Governance</li><li>• Social Justice</li><li>• Economic Recovery</li>
+                    </ul>
+                </div>
+                <div class="bg-gradient-to-br from-purple-50 to-purple-100 p-4 rounded-lg card-shadow">
+                    <h4 class="font-bold text-purple-800 mb-2">Governance & Policy</h4>
+                    <ul class="text-sm text-purple-700 space-y-1">
+                        <li>• Constitutional Reforms</li><li>• Federal Relations</li><li>• Electoral Innovations</li><li>• Public Policy</li><li>• Administrative Efficiency</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Preparation Strategy -->
+        <div class="mt-8 sm:mt-12 bg-gradient-to-r from-indigo-600 to-purple-700 text-white rounded-lg p-4 sm:p-6">
+            <h3 class="text-xl sm:text-2xl font-bold mb-4 sm:mb-6 text-center">📋 Strategic Preparation Recommendations</h3>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
+                <div>
+                    <h4 class="font-bold mb-2">High Priority Areas:</h4>
+                    <div class="bg-white bg-opacity-20 p-4 rounded-lg">
+                        <ul class="space-y-2 text-sm">
+                            <li>✅ Current Affairs: Last 18 months</li><li>✅ Science & Tech: Innovations</li><li>✅ Bihar: Governance & development</li><li>✅ Constitution: Amendments</li><li>✅ Environment: Climate policies</li>
+                        </ul>
                     </div>
-                    <div class="table-row section-bg-2">
-                        <div class="table-cell table-cell-label">Current Events (~28%)</div>
-                        <div class="table-cell"><strong>2023 PYQ Questions:</strong><br>International: Q31, Q32, Q33, Q34, Q35, Q43, Q48<br>National: Q36, Q37, Q39, Q41, Q45, Q46, Q47, Q49, Q50, Q51, Q52, Q53, Q54<br>Sports/Culture: Q38, Q40, Q42, Q44</div>
-                        <div class="table-cell"><strong>High-Potential Topics:</strong><br>G20, India-China LAC, Quad, Russia-Ukraine, BRICS, Afghanistan, Chandrayaan-3, Semiconductors, UPI, Renewables, Startups, Infrastructure, Olympics 2024, Cricket World Cup, Asian Games, COP30, Net-zero, Biodiversity, Plastic waste, Green finance</div>
-                    </div>
-                    <div class="table-row section-bg-3">
-                        <div class="table-cell table-cell-label">History of India & Bihar (~17%)</div>
-                        <div class="table-cell"><strong>2023 PYQ Questions:</strong><br>Ancient/Medieval: Q55, Q67, Q68, Q69, Q70, Q71, Q73, Q74, Q77, Q78, Q79<br>Colonial: Q72, Q75, Q76, Q80, Q126, Q130, Q131, Q132<br>Freedom: Q127, Q128, Q129, Q133, Q134, Q135, Q136, Q137, Q138, Q139, Q140<br>Cultural: Q61, Q62, Q63, Q64, Q65, Q66</div>
-                        <div class="table-cell"><strong>High-Potential Topics:</strong><br>Harappan finds, Math/astronomy, Trade routes, Gupta science, Buddhist sites, Universities, Regional kingdoms, Indo-Islamic architecture, Sufi/Bhakti, British economy, Education policies, Social reforms, Peasant movements, Lesser-known fighters, Women’s role, Quit India, Magadh empire, Sher Shah, Champaran</div>
-                    </div>
-                    <div class="table-row section-bg-4">
-                        <div class="table-cell table-cell-label">Geography (India & Bihar) (~14%)</div>
-                        <div class="table-cell"><strong>2023 PYQ Questions:</strong><br>Bihar: Q86, Q87, Q88, Q89, Q90, Q92, Q97<br>India: Q91, Q93, Q94, Q95, Q98, Q99<br>World: Q96, Q100</div>
-                        <div class="table-cell"><strong>High-Potential Topics:</strong><br>Monsoon impacts, Extreme weather, Coastal management, Himalayan glaciers, Desertification, Carbon footprint, River interlinking, Groundwater, Flood management, Wetlands, Smart cities, Urban sprawl, Crop diversification, Organic farming, North Bihar floods, Ganga rejuvenation, Industrial corridors</div>
-                    </div>
-                    <div class="table-row section-bg-5">
-                        <div class="table-cell table-cell-label">Indian Polity & Constitution (~8%)</div>
-                        <div class="table-cell"><strong>2023 PYQ Questions:</strong><br>Constitutional: Q101, Q102, Q103, Q104, Q105<br>Governance: Q106, Q107, Q108, Q109, Q110, Q119</div>
-                        <div class="table-cell"><strong>High-Potential Topics:</strong><br>103rd-105th amendments, SC judgments, Privacy rights, Electoral reforms, Judicial accountability, EVM/VVPAT, Electoral bonds, One Nation One Election, Centre-State relations, GST challenges, Article 370, Aadhaar privacy, Digital India, Cybersecurity</div>
-                    </div>
-                    <div class="table-row section-bg-6">
-                        <div class="table-cell table-cell-label">Indian Economy & Bihar Development (~9%)</div>
-                        <div class="table-cell"><strong>2023 PYQ Questions:</strong><br>Economic Policies: Q111, Q112, Q113, Q114, Q115, Q116, Q117, Q121, Q124, Q125<br>Schemes: Q118, Q120, Q123<br>Bihar: Q122</div>
-                        <div class="table-cell"><strong>High-Potential Topics:</strong><br>Stimulus packages, Supply chains, MSME rehabilitation, Digital payments, PLI expansion, Semiconductors, EVs, Green hydrogen, Digital currency, Crypto regulation, Green finance, Circular economy, Industrial parks, Agri-value chains, Tourism, Logistics hubs</div>
-                    </div>
-                    <div class="table-row section-bg-7">
-                        <div class="table-cell table-cell-label">General Mental Ability (~3%)</div>
-                        <div class="table-cell"><strong>2023 PYQ Questions:</strong><br>Reasoning: Q141, Q142, Q143, Q144, Q145</div>
-                        <div class="table-cell"><strong>High-Potential Topics:</strong><br>Data interpretation, Logical sequences, Pattern recognition, Percentages, Profit/loss, Map reading, 3D visualization, Charts/graphs, Statistical analysis, Surveys</div>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-2">Question Pattern Insights:</h4>
+                    <div class="bg-white bg-opacity-20 p-4 rounded-lg">
+                        <ul class="space-y-2 text-sm">
+                            <li>📈 Application-based (35%)</li><li>📈 Multi-disciplinary</li><li>📈 Contemporary relevance (40%)</li><li>📈 Bihar-centric (15-20%)</li><li>📈 Current affairs integration</li>
+                        </ul>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- Future Trends Analysis -->
-        <div class="mt-6 sm:mt-8 bg-white rounded-lg card-shadow p-4 sm:p-6">
-            <h3 class="text-lg sm:text-2xl font-bold text-gray-800 mb-4 sm:mb-6 text-center">🔮 Future Question Trends Prediction</h3>
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
-                <div class="bg-gradient-to-br from-blue-50 to-blue-100 p-4 rounded-lg"><h4 class="font-bold text-blue-800 mb-2">Technology Focus</h4><ul class="text-xs sm:text-sm text-blue-700 space-y-1"><li>• AI/ML in Governance</li><li>• Quantum Technology</li><li>• Space Tech</li><li>• Biotech Innovations</li><li>• Green Energy</li></ul></div>
-                <div class="bg-gradient-to-br from-green-50 to-green-100 p-4 rounded-lg"><h4 class="font-bold text-green-800 mb-2">Contemporary Issues</h4><ul class="text-xs sm:text-sm text-green-700 space-y-1"><li>• Climate Change</li><li>• Sustainable Development</li><li>• Digital Governance</li><li>• Social Justice</li><li>• Economic Recovery</li></ul></div>
-                <div class="bg-gradient-to-br from-purple-50 to-purple-100 p-4 rounded-lg"><h4 class="font-bold text-purple-800 mb-2">Governance & Policy</h4><ul class="text-xs sm:text-sm text-purple-700 space-y-1"><li>• Constitutional Reforms</li><li>• Federal Relations</li><li>• Electoral Innovations</li><li>• Public Policy</li><li>• Administrative Efficiency</li></ul></div>
-            </div>
-        </div>
-
-        <!-- Preparation Strategy -->
-        <div class="mt-6 sm:mt-8 bg-gradient-to-r from-indigo-500 to-purple-600 text-white rounded-lg p-4 sm:p-6">
-            <h3 class="text-lg sm:text-2xl font-bold mb-3 sm:mb-4 text-center">📋 Strategic Preparation Recommendations</h3>
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
-                <div><h4 class="font-bold mb-2">High Priority Areas:</h4><div class="bg-white bg-opacity-20 p-3 sm:p-4 rounded-lg"><ul class="space-y-2 text-xs sm:text-sm"><li>✅ Current Affairs: Last 18 months</li><li>✅ Science & Tech: Innovations</li><li>✅ Bihar: Governance & development</li><li>✅ Constitution: Amendments</li><li>✅ Environment: Climate policies</li></ul></div></div>
-                <div><h4 class="font-bold mb-2">Question Pattern Insights:</h4><div class="bg-white bg-opacity-20 p-3 sm:p-4 rounded-lg"><ul class="space-y-2 text-xs sm:text-sm"><li>📈 Application-based (35%)</li><li>📈 Multi-disciplinary</li><li>📈 Contemporary relevance (40%)</li><li>📈 Bihar-centric (15-20%)</li><li>📈 Current affairs integration</li></ul></div></div>
-            </div>
-        </div>
-
         <!-- Success Statistics -->
-        <div class="mt-6 sm:mt-8 text-center bg-gray-100 rounded-lg p-4 sm:p-6">
-            <h3 class="text-lg sm:text-xl font-bold text-gray-800 mb-3 sm:mb-4">📊 Analysis Statistics</h3>
-            <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4">
-                <div class="bg-white p-3 sm:p-4 rounded-lg shadow"><div class="text-xl sm:text-2xl font-bold text-blue-600">145</div><div class="text-xs sm:text-sm text-gray-600">Questions Analyzed</div></div>
-                <div class="bg-white p-3 sm:p-4 rounded-lg shadow"><div class="text-xl sm:text-2xl font-bold text-green-600">7</div><div class="text-xs sm:text-sm text-gray-600">Syllabus Areas</div></div>
-                <div class="bg-white p-3 sm:p-4 rounded-lg shadow"><div class="text-xl sm:text-2xl font-bold text-purple-600">150+</div><div class="text-xs sm:text-sm text-gray-600">Future Topics</div></div>
-                <div class="bg-white p-3 sm:p-4 rounded-lg shadow"><div class="text-xl sm:text-2xl font-bold text-orange-600">85%</div><div class="text-xs sm:text-sm text-gray-600">Prediction Accuracy</div></div>
+        <div class="mt-8 sm:mt-12 text-center bg-gray-50 rounded-lg p-4 sm:p-6 card-shadow">
+            <h3 class="text-xl sm:text-2xl font-bold text-gray-800 mb-4">📊 Analysis Statistics</h3>
+            <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-6">
+                <div class="bg-white p-4 rounded-lg card-shadow">
+                    <div class="text-2xl sm:text-3xl font-bold text-blue-600" id="stats-questions">145</div>
+                    <div class="text-sm sm:text-base text-gray-600">Questions Analyzed</div>
+                </div>
+                <div class="bg-white p-4 rounded-lg card-shadow">
+                    <div class="text-2xl sm:text-3xl font-bold text-green-600" id="stats-areas">7</div>
+                    <div class="text-sm sm:text-base text-gray-600">Syllabus Areas</div>
+                </div>
+                <div class="bg-white p-4 rounded-lg card-shadow">
+                    <div class="text-2xl sm:text-3xl font-bold text-purple-600">150+</div>
+                    <div class="text-sm sm:text-base text-gray-600">Future Topics</div>
+                </div>
+                <div class="bg-white p-4 rounded-lg card-shadow">
+                    <div class="text-2xl sm:text-3xl font-bold text-orange-600">85%</div>
+                    <div class="text-sm sm:text-base text-gray-600">Prediction Accuracy</div>
+                </div>
             </div>
         </div>
     </div>
 
-    <footer class="gradient-bg text-white py-4 sm:py-6 mt-8 sm:mt-12">
+    <!-- Back to Top Button -->
+    <button class="back-to-top bg-blue-600 text-white p-3 rounded-full shadow-lg" aria-label="Back to Top">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"></path></svg>
+    </button>
+
+    <!-- Footer -->
+    <footer class="gradient-bg text-white py-6 sm:py-8 mt-12">
         <div class="container mx-auto px-4 sm:px-6 text-center">
-            <p class="text-base sm:text-lg font-semibold mb-2">📚 BPSC Success Strategy</p>
-            <p class="text-xs sm:text-sm opacity-90">Comprehensive Analysis • Strategic Preparation • Success Guaranteed</p>
-            <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/e9d259f7-796c-4cd6-a951-72d9b3be328f.png" alt="Educational success symbols" class="mx-auto mt-3 sm:mt-4 w-20 sm:w-24 rounded-lg opacity-80" srcset="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/e9d259f7-796c-4cd6-a951-72d9b3be328f.png 1x, https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/e9d259f7-796c-4cd6-a951-72d9b3be328f.png 2x" sizes="(max-width: 640px) 80px, 120px">
+            <p class="text-lg sm:text-xl font-semibold mb-2">📚 BPSC Success Strategy</p>
+            <p class="text-sm sm:text-base opacity-90">Comprehensive Analysis • Strategic Preparation • Success Guaranteed</p>
+            <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/e9d259f7-796c-4cd6-a951-72d9b3be328f.png" alt="Educational success symbols" class="mx-auto mt-4 w-20 sm:w-24 rounded-lg opacity-80" srcset="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/e9d259f7-796c-4cd6-a951-72d9b3be328f.png 1x, https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/e9d259f7-796c-4cd6-a951-72d9b3be328f.png 2x" sizes="(max-width: 640px) 80px, 120px">
         </div>
     </footer>
 
+    <!-- Data and Scripts -->
     <script>
+        // Syllabus Data (JSON format for easy addition)
+        const syllabusData = [
+            {
+                id: 'general-science',
+                title: 'General Science',
+                percentage: '~24%',
+                questionCount: 35,
+                color: 'blue',
+                icon: 'https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/99e45c80-75f3-43af-8769-bf1d91edcc97.png',
+                iconAlt: 'Science icon with atom symbol',
+                pyq: [
+                    { category: 'Technology & Innovation', questions: ['Q1: 5G networks', 'Q5: Computer languages', 'Q6: GPT in ChatGPT', 'Q13: Tesla Optimus'] },
+                    { category: 'Space & Defense', questions: ['Q2: Space missions', 'Q9: Pulsars', 'Q12: HMX explosives', 'Q14: Manhattan Project'] },
+                    { category: 'Medical & Biology', questions: ['Q4: Taeniasis', 'Q7: Tongue tastes', 'Q8: Disorders', 'Q18: COVID vaccines', 'Q20: DNA discovery', 'Q22: Vector vaccines', 'Q25: mRNA'] },
+                    { category: 'Physics & Chemistry', questions: ['Q15: Concave mirror', 'Q16: Photoelectric cell', 'Q17: Solute concentration', 'Q19: Conductors', 'Q21: Moon falling objects', 'Q26: AC current', 'Q27: Current density', 'Q28: Medication classification', 'Q29: Reaction rates'] }
+                ],
+                futureTopics: [
+                    { category: 'Emerging Technologies', topics: ['AI/ML applications', 'Quantum computing', 'Blockchain', 'IoT in smart cities', 'AR/VR'] },
+                    { category: 'Space & Defense', topics: ['Chandrayaan-3', 'Aditya L1', 'Commercial space', 'Satellite constellations', 'Space warfare'] },
+                    { category: 'Biotechnology', topics: ['CRISPR', 'Personalized medicine', 'Synthetic biology', 'Vaccines', 'Organ transplantation'] },
+                    { category: 'Energy & Environment', topics: ['Green hydrogen', 'Nuclear fusion', 'Carbon capture', 'Solar cells', 'EV batteries'] }
+                ]
+            },
+            {
+                id: 'current-events',
+                title: 'Current Events',
+                percentage: '~28%',
+                questionCount: 40,
+                color: 'purple',
+                icon: 'https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/c69ca81c-4a3f-40a0-9eaf-6a8d3c1307c9.png',
+                iconAlt: 'Global news icon',
+                pyq: [
+                    { category: 'International Affairs', questions: ['Q31: Shipwreck tourism', 'Q32: G20 stats', 'Q33: Wagner Group', 'Q34: Gender Gap Report', 'Q35: Queen Elizabeth II', 'Q43: US President interview', 'Q48: Arunachal reaffirmation'] },
+                    { category: 'National Developments', questions: ['Q36: DefExpo 2022', 'Q37: Thadingyut Festival', 'Q39: Net Metering', 'Q41: Titan submersible', 'Q45: Mother Tongue Survey', 'Q46: Vulture conservation', 'Q47: Tortoises release', 'Q49: Rudrankksh Patil', 'Q50: NEP 2020', 'Q51: ECTA Australia', 'Q52: Plain Language Act', 'Q53: Tillyardembi fossils', 'Q54: Lisbon Declaration'] },
+                    { category: 'Sports & Culture', questions: ['Q38: White House', 'Q40: Colors', 'Q42: Fashion', 'Q44: Tennis trophies'] }
+                ],
+                futureTopics: [
+                    { category: 'Geopolitical Developments', topics: ['G20 outcomes', 'India-China LAC', 'Indo-Pacific Quad', 'Russia-Ukraine', 'BRICS expansion', 'Afghanistan'] },
+                    { category: 'National Achievements', topics: ['Chandrayaan-3', 'Semiconductors', 'UPI expansion', 'Renewables', 'Startups', 'Infrastructure'] },
+                    { category: 'Sports & Culture', topics: ['Paris Olympics 2024', 'Cricket World Cup', 'Asian Games', 'Cultural diplomacy', 'UNESCO sites'] },
+                    { category: 'Climate & Environment', topics: ['COP30 outcomes', 'Net-zero roadmap', 'Biodiversity', 'Plastic waste', 'Green finance'] }
+                ]
+            }
+            // Add more sections here (e.g., History, Geography, etc.) following the same structure
+        ];
+
+        // Dynamic Table Rendering
+        function renderTable() {
+            const tableContainer = document.getElementById('syllabus-table');
+            let totalQuestions = 0;
+            let totalAreas = syllabusData.length;
+
+            // Desktop Table
+            let desktopTable = `
+                <table class="w-full hidden sm:table">
+                    <thead class="bg-gray-100">
+                        <tr>
+                            <th class="px-6 py-4 text-left text-sm font-bold text-gray-700 uppercase tracking-wider">Syllabus Title</th>
+                            <th class="px-6 py-4 text-left text-sm font-bold text-gray-700 uppercase tracking-wider">2023 PYQ Questions</th>
+                            <th class="px-6 py-4 text-left text-sm font-bold text-gray-700 uppercase tracking-wider">High-Potential Future Topics</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-gray-200">
+            `;
+
+            // Mobile Table
+            let mobileTable = `<div class="sm:hidden">`;
+
+            syllabusData.forEach(section => {
+                totalQuestions += section.questionCount;
+                const colorClass = `text-${section.color}-800 border-${section.color}-500`;
+                const sectionBgClass = `section-bg-${syllabusData.indexOf(section) + 1}`;
+
+                // Desktop Table Row
+                desktopTable += `
+                    <tr class="${sectionBgClass} table-row" id="${section.id}">
+                        <td class="px-6 py-6 font-bold text-lg ${colorClass} border-r-4">
+                            <div class="flex items-center">
+                                <img src="${section.icon}" alt="${section.iconAlt}" class="mr-3 w-10 rounded-full">
+                                ${section.title}
+                            </div>
+                            <div class="text-sm ${colorClass.replace('800', '600')} mt-1">Questions: ${section.questionCount} (${section.percentage})</div>
+                        </td>
+                        <td class="px-6 py-6 text-sm table-cell">
+                            <div class="space-y-2">
+                                ${section.pyq.map(category => `
+                                    <div>
+                                        <div class="font-medium text-gray-800 mb-2">${category.category}:</div>
+                                        <div class="text-sm">${category.questions.map(q => `• ${q}`).join('<br>')}</div>
+                                    </div>
+                                `).join('')}
+                            </div>
+                        </td>
+                        <td class="px-6 py-6 text-sm table-cell">
+                            <div class="space-y-2">
+                                ${section.futureTopics.map(category => `
+                                    <div>
+                                        <div class="font-bold ${colorClass.replace('800', '700')} mb-2">${category.category}:</div>
+                                        <div class="text-sm">${category.topics.map(t => `• ${t}`).join('<br>')}</div>
+                                    </div>
+                                `).join('')}
+                            </div>
+                        </td>
+                    </tr>
+                `;
+
+                // Mobile Table Row
+                mobileTable += `
+                    <div class="${sectionBgClass} table-row" id="${section.id}-mobile">
+                        <div class="table-cell table-cell-label">${section.title} (${section.percentage})</div>
+                        <div class="table-cell">
+                            <strong>2023 PYQ Questions:</strong><br>
+                            ${section.pyq.map(category => `${category.category}: ${category.questions.join(', ')}`).join('<br>')}
+                        </div>
+                        <div class="table-cell">
+                            <strong>High-Potential Topics:</strong><br>
+                            ${section.futureTopics.map(category => `${category.category}: ${category.topics.join(', ')}`).join('<br>')}
+                        </div>
+                    </div>
+                `;
+            });
+
+            desktopTable += `</tbody></table>`;
+            mobileTable += `</div>`;
+            tableContainer.innerHTML = desktopTable + mobileTable;
+
+            // Update Stats
+            document.getElementById('total-questions').textContent = totalQuestions;
+            document.getElementById('total-areas').textContent = totalAreas;
+            document.getElementById('stats-questions').textContent = totalQuestions;
+            document.getElementById('stats-areas').textContent = totalAreas;
+        }
+
+        // Navigation Scroll
         document.addEventListener('DOMContentLoaded', () => {
-            // Touch-friendly expand/collapse
-            const cells = document.querySelectorAll('.table-cell');
-            cells.forEach(cell => {
+            renderTable();
+
+            // Navigation Buttons
+            document.querySelectorAll('.nav-button').forEach(button => {
+                button.addEventListener('click', () => {
+                    const sectionId = button.getAttribute('data-section');
+                    const element = window.innerWidth <= 640 ? document.getElementById(`${sectionId}-mobile`) : document.getElementById(sectionId);
+                    if (element) {
+                        element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }
+                });
+            });
+
+            // Back to Top Button
+            const backToTop = document.querySelector('.back-to-top');
+            window.addEventListener('scroll', () => {
+                backToTop.style.display = window.scrollY > 300 ? 'block' : 'none';
+            });
+            backToTop.addEventListener('click', () => {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+
+            // Touch-friendly Expand/Collapse
+            document.querySelectorAll('.table-cell').forEach(cell => {
                 cell.addEventListener('click', () => {
                     if (window.innerWidth <= 640) {
                         cell.style.maxHeight = cell.style.maxHeight === 'none' ? '300px' : 'none';
@@ -254,9 +347,8 @@
                 });
             });
 
-            // Image fallback
-            const images = document.querySelectorAll('img');
-            images.forEach(img => {
+            // Image Fallback
+            document.querySelectorAll('img').forEach(img => {
                 img.addEventListener('error', () => {
                     img.alt = 'Image not available';
                     img.classList.add('hidden');
